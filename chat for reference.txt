@@ -1,0 +1,27 @@
+Eswaramoorthi, Karthikeyan(Cognizant) _: https://github.com/ekarthikeyan/FSD_MEAN
+
+
+Vijayan Gopal _: https://github.com/vijayan-gopal/nodejsworkout
+
+Kiran Nadumane _: I have done basic project setup with categories endpoint
+
+Kiran Nadumane _: https://github.com/kirankn8/WorkOut_Tracker
+
+Vijayan Gopal _: This is my angular - https://github.com/vijayan-gopal/WorkoutTracker
+
+Eswaramoorthi, Karthikeyan(Cognizant) _: not really using it but a placeholder
+
+Eswaramoorthi, Karthikeyan(Cognizant) _: for now
+
+Puneet Vashisht: http://expressjs.com/en/guide/error-handling.html
+
+Puneet Vashisht: 1. Exception Handling
+
+Puneet Vashisht: 2. Enable xml response
+
+Puneet Vashisht: 3. Server side validation with Mongoose and send error messages as responses
+
+Puneet Vashisht: https://www.npmjs.com/package/express-xml-bodyparser
+
+Puneet Vashisht: https://mongoosejs.com/docs/validation.html
+

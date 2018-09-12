@@ -13,49 +13,57 @@ app.use(bodyParser.urlencoded({ extended: true}));
             res.send(cat);
         });
     });
-}
-    // app.get('/api/todo/:id', function(req,res) {
-    //     Todos.findById({_id: req.params.id}, function(err, todo)
-    //     {
-    //         if (err) throw err;
-    //         res.send(todo);
 
-    //     });
-    // });
-    // app.post('/api/todo', function(req,res){
 
-    //     if(req.body.id){
-    //         Todos.findByIdAndUpdate(req.body.id, {
-    //             todo: req.body.todo,
-    //             isDone: req.body.isDone,
-    //             hasAttachment: req.body.hasAttachment
-    //         }, function(err, todo) {
-    //             if (err) throw err;
-    //             res.send('Success');
-    //         });
-    //     }
-    //     else {
-    //         console.log(req.body.todo);
-    //         console.log(req.body.isDone);
-    //         console.log(req.body.hasAttachment);
+    app.get('/api/cat/:id', function(req, res) {
+        let categoryId = parseInt(req.params.id);
+        Cat.findOne({category_id: parseInt(req.params.id)}, function(err, cat)
+        {
+            if (err) throw err;
+            res.send(cat);
 
-    //         var newTodo = Todos({
-    //             username: 'test',
-    //             todo: req.body.todo,
-    //             isDone: req.body.isDone,
-    //             hasAttachment: req.body.hasAttachment
-    //         });
-    //         newTodo.save(function(err) {
-    //             res.send('Success');
-    //         });
+        });
+    });
 
-    //         app.delete('/api/todo', function(req, res){
-    //             Todos.findByIdAndRemove(req.body.id, function(err) {
-    //                 if (err) throw err;
-    //                 res.send('Success');
-    //             });
-    //         });
-//         }
+    app.post('/api/newcat', function(req,res){
+
+        // if(req.body.id){
+        //     Cat.findByIdAndUpdate(req.body.id, {
+        //         todo: req.body.todo,
+        //         isDone: req.body.isDone,
+        //         hasAttachment: req.body.hasAttachment
+        //     }, function(err, todo) {
+        //         if (err) throw err;
+        //         res.send('Success');
+        //     });
+      console.log('inside post');
+        // }        
+       console.log(req.body.category_id);
+       console.log(req.body.category_name);
+       
+       var newCat = Cat({
+        
+            "category_id" : req.body.category_id,
+            "category_name" : req.body.category_name
+       });
+
+//        let error = newCat.
+         newCat.save(function(err, docs) {
+             if (err) console.log(err);
+         res.send(docs + 'Success');
+     });
+});
+} //for module exports
+// app.delete('/api/todo', function(req, res){
+//     Todos.findByIdAndRemove(req.body.id, function(err) {
+//         if (err) throw err;
+//         res.send('Success');
+//     });
+// });
+// else {
+
+
+// }
 
 //     });
 // 
