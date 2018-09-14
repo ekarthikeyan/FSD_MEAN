@@ -6,6 +6,10 @@ module.exports = function(app) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
+app.get("/", function (req, res) {
+    throw new Error("MIC Testing 1 2 3 "); // Express will catch this on its own.
+  });
+
     app.get('/api/cat', function(req, res){
         console.log('inside get call')
         Cat.find({}, function(err, cat) {
